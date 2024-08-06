@@ -53,36 +53,23 @@ tooltip label {
   color: lighter(@active);
 }
 
-#gcpu,
-#custom-github,
-#memory,
-#disk,
+
 #together,
 #submap,
 #custom-weather,
-#custom-recorder,
 #connection,
 #cnoti,
 #brightness,
-#power,
 #custom-updates,
 #tray,
-#audio,
-#privacy,
-#sound {
+#privacy
+{
   border-radius: 4px;
   margin: 2px 2px 4px 2px;
   background: darker(@active);
 }
 
-#custom-vpn,
-#custom-hotspot {
-  background: darker(@active);
-}
 
-#custom-dmark {
-  color: @foreground;
-}
 
 #workspaces button {
   transition-property: background-color;
@@ -91,27 +78,19 @@ tooltip label {
   background: transparent;
   border-radius: 4px;
 }
+#workspaces button.urgent {
+  font-weight: bold;
+  color: @foreground;
+}
 
 #workspaces button.active {
   padding: 4px 2px;
-  background: @active;
-  color: lighter(@active);
+  background: darker(@active);
+  color: @color5;
   border-radius: 4px;
 }
 
-#pulseaudio.mic {
-  border-radius: 4px;
-  color: @background;
-  background: darker(@foreground);
-  padding-left: 4px;
-}
 
-#backlight-slider trough,
-#pulseaudio-slider trough {
-  margin-top: 4px;
-  min-width: 6px;
-  min-height: 60px;
-  border-radius: 8px;
-  background-color: @background;
-}
+
+
 

@@ -50,147 +50,27 @@
       "transition-duration": 500,
       "transition-left-to-right": false
     },
-    "modules": [
-      "custom/dmark",
-      "group/gcpu",
-      "memory",
-      "disk"
-    ]
-  },
-  "custom/dmark": {
-    "format": "",
-    "tooltip": false
-  },
-  "group/gcpu": {
-    "orientation": "inherit",
-    "modules": [
-      "custom/cpu-icon",
-      "custom/cputemp",
-      "cpu"
-    ]
-  },
-  "custom/cpu-icon": {
-    "format": "󰻠",
-    "tooltip": false
-  },
-  "custom/cputemp": {
-    "format": "{}",
-    "exec": "~/.config/waybar/bin/cputemp",
-    "interval": 10,
-    "return-type": "json"
-  },
-  "cpu": {
-    "format": "<b>{usage}󱉸</b>",
-    "on-click": "foot btop"
-  },
-  "memory": {
-    "format": "<b>  \n{:2}󱉸</b>"
-  },
-  "disk": {
-    "interval": 600,
-    "format": "<b> 󰋊 \n{percentage_used}󱉸</b>",
-    "path": "/"
   },
   "modules-right": [
     "custom/recorder",
-    "privacy",
-    "group/brightness",
-    "group/sound",
     "group/connection",
     "group/together",
-    "group/cnoti",
     "tray",
     "group/power"
   ],
-  "custom/recorder": {
-    "format": "{}",
-    "interval": "once",
-    "exec": "echo ''",
-    "tooltip": "false",
-    "exec-if": "pgrep 'wl-screenrec'",
-    "on-click": "recorder",
-    "signal": 4
-  },
-  "privacy": {
+    "privacy": {
     "orientation": "vertical",
     "icon-spacing": 4,
     "icon-size": 14,
     "transition-duration": 250,
     "modules": [
-      {
-        "type": "screenshare",
-        "tooltip": true,
-        "tooltip-icon-size": 24
-      }
-    ]
+          ]
   },
-  "group/brightness": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 500,
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "backlight",
-      "backlight/slider"
-    ]
-  },
-  "backlight": {
-    "device": "intel_backlight",
-    "format": "{icon}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      "",
-      ""
-    ],
-    "on-scroll-down": "brightnessctl s 5%-",
-    "on-scroll-up": "brightnessctl s +5%",
-    "tooltip": true,
-    "tooltip-format": "Brightness: {percent}% ",
-    "smooth-scrolling-threshold": 1
-  },
-  "backlight/slider": {
+    "backlight/slider": {
     "min": 5,
     "max": 100,
     "orientation": "vertical",
     "device": "intel_backlight"
-  },
-  "group/sound": {
-    "orientation": "inherit",
-    "modules": [
-      "group/audio",
-      "custom/notifications"
-    ]
-  },
-  "group/audio": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 500,
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "pulseaudio",
-      "pulseaudio#mic",
-      "pulseaudio/slider"
-    ]
-  },
-  "group/cnoti": {
-    "orientation": "inherit",
-    "modules": [
-      "custom/github"
-    ]
   },
   "group/connection": {
     "orientation": "inherit",
@@ -245,59 +125,14 @@
       "bluetooth#status"
     ]
   },
-  "group/power": {
-    "orientation": "inherit",
-    "drawer": {
-      "transition-duration": 500,
-      "transition-left-to-right": false
-    },
-    "modules": [
-      "battery",
-      "power-profiles-daemon"
-    ]
-  },
+
   "tray": {
     "icon-size": 18,
     "spacing": 10
   },
-  "pulseaudio": {
-    "format": "{icon}",
-    "format-bluetooth": "{icon}",
-    "tooltip-format": "{volume}% {icon} | {desc}",
-    "format-muted": "󰖁",
-    "format-icons": {
-      "headphones": "󰋌",
-      "handsfree": "󰋌",
-      "headset": "󰋌",
-      "phone": "",
-      "portable": "",
-      "car": " ",
-      "default": [
-        "󰕿",
-        "󰖀",
-        "󰕾"
-      ]
-    },
-    "on-click": "volume mute",
-    "on-click-middle": "pavucontrol",
-    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +5%",
-    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -5%",
-    "smooth-scrolling-threshold": 1
-  },
-  "pulseaudio#mic": {
-    "format": "{format_source}",
-    "format-source": "",
-    "format-source-muted": "",
-    "tooltip-format": "{volume}% {format_source} ",
-    "on-click": "pactl set-source-mute 0 toggle",
-    "on-scroll-down": "pactl set-source-volume 0 -1%",
-    "on-scroll-up": "pactl set-source-volume 0 +1%"
-  },
-  "pulseaudio/slider": {
-    "min": 0,
-    "max": 140,
-    "orientation": "vertical"
-  },
+
+
+
   "network": {
     "format": "{icon}",
     "format-icons": {
@@ -359,17 +194,6 @@
       "warning": 30,
       "critical": 15
     },
-    "format": "{icon}",
-    "format-charging": "<b>{icon} </b>",
-    "format-full": "<span color='#82A55F'><b>{icon}</b></span>",
-    "format-icons": [
-      "󰁻",
-      "󰁼",
-      "󰁾",
-      "󰂀",
-      "󰂂",
-      "󰁹"
-    ],
     "tooltip-format": "{timeTo} {capacity} % | {power} W"
   },
   "clock": {
@@ -386,17 +210,6 @@
       }
     }
   },
-  "power-profiles-daemon": {
-    "format": "{icon}",
-    "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
-    "tooltip": true,
-    "format-icons": {
-      "default": "",
-      "performance": "<span color='#B37F34'><small></small></span>",
-      "balanced": "<span><small> </small></span>",
-      "power-saver": "<span color='#a6e3a1'><small></small></span>"
-    }
-  },
   "custom/hyprshade": {
     "format": "{}",
     "tooltip": true,
@@ -405,14 +218,7 @@
     "on-click": "toggle-hyprshade",
     "return-type": "json"
   },
-  "custom/weather": {
-    "format": "{}",
-    "tooltip": true,
-    "interval": 3600,
-    "exec": "wttrbar --custom-indicator '{ICON}\n<b>{temp_C}</b>' --location noida",
-    "return-type": "json"
-  },
-  "custom/updates": {
+    "custom/updates": {
     "format": "{}",
     "interval": 10800,
     "exec": "~/.config/waybar/bin/updatecheck",
@@ -437,14 +243,7 @@
     "format": "",
     "tooltip": false
   },
-  "custom/colorpicker": {
-    "format": "{}",
-    "return-type": "json",
-    "interval": "once",
-    "exec": "colorpicker -j",
-    "on-click": "sleep 1 && colorpicker",
-    "signal": 1
-  },
+
   "custom/hyprkill": {
     "format": "{}",
     "interval": "once",
@@ -460,15 +259,7 @@
     "interval": "once",
     "signal": 2
   },
-  "custom/github": {
-    "format": "{}",
-    "return-type": "json",
-    "interval": 3600,
-    "signal": 9,
-    "exec": "$HOME/.config/waybar/bin/github.sh",
-    "on-click": "xdg-open https://github.com/notifications;pkill -RTMIN+9 waybar"
-  },
-  "idle_inhibitor": {
+   "idle_inhibitor": {
     "format": "{icon}",
     "tooltip-format-activated": "Idle Inhibitor is active",
     "tooltip-format-deactivated": "Idle Inhibitor is not active",
