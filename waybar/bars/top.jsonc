@@ -6,6 +6,7 @@
   "modules-left": [
     "custom/updates",
     "hyprland/workspaces",
+
     "hyprland/submap",
     "group/info"
   ],
@@ -26,16 +27,16 @@
     //   "10": "十"
     // }
     "format-icons": {
-      "1": "I",
-      "2": "II",
-      "3": "III",
-      "4": "IV",
-      "5": "V",
-      "6": "VI",
-      "7": "VII",
-      "8": "VIII",
-      "9": "IX",
-      "10": "X"
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      "10": "10"
       // "10": "१०"
     }
   },
@@ -239,7 +240,7 @@
     "on-click": "hash wihotspot && wihotspot",
     "interval": 5
   },
-  "custom/mark": {
+	  "custom/mark": {
     "format": "",
     "tooltip": false
   },
@@ -250,14 +251,25 @@
     "exec": "echo '󰅙\nKill clients using hyrpctl kill'",
     "on-click": "sleep 1 && hyprctl kill"
   },
-  "custom/notifications": {
-    "format": "<b>{}</b> ",
-    "exec": "noti-cycle -j",
-    "on-click": "noti-cycle",
-    "on-click-right": "noti-cycle rofi",
+	  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": "<span foreground='red'><sup></sup></span>",
+      "none": "",
+      "dnd-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-none": "",
+      "inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "inhibited-none": "",
+      "dnd-inhibited-notification": "<span foreground='red'><sup></sup></span>",
+      "dnd-inhibited-none": ""
+    },
     "return-type": "json",
-    "interval": "once",
-    "signal": 2
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
   },
    "idle_inhibitor": {
     "format": "{icon}",
@@ -267,5 +279,5 @@
       "activated": "󰔡",
       "deactivated": "󰔢"
     }
-  }
+	}
 }

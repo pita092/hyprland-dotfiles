@@ -17,7 +17,7 @@ window#waybar {
   transition-property: background-color;
   transition-duration: 0.5s;
   border-radius: 8px;
-  border: 2px solid @active;
+  border: 2px solid @color15;
   background: @background;
   color: lighter(@active);
 }
@@ -26,8 +26,8 @@ menu,
 tooltip {
   border-radius: 8px;
   padding: 2px;
-  border: 1px solid lighter(@active);
-  background: @background;
+  border: 2px solid lighter(@color11);
+  background: @color8;
   color: lighter(@active);
 }
 
@@ -54,19 +54,43 @@ tooltip label {
 }
 
 
-#together,
 #submap,
 #custom-weather,
 #connection,
 #cnoti,
 #brightness,
-#custom-updates,
-#tray,
 #privacy
 {
-  border-radius: 4px;
+  border: 4px solid @color1;
   margin: 2px 2px 4px 2px;
   background: darker(@active);
+	border-radius: 4px;
+}
+
+#tray
+{
+  border: 4px solid @color2;
+  margin: 2px 2px 4px 2px;
+  background: darker(@active);
+	border-radius: 4px;
+}
+#custom-updates
+{
+	border: 2px solid @color15;
+  margin: 2px 2px 4px 2px;
+  background: darker(@active);
+	border-radius: 4px;
+}
+
+#together
+{
+  border: 4px solid @color4;
+  margin: 2px 2px 4px 2px;
+  background: darker(@active);
+	border-radius: 4px;
+}
+#custom-notification {
+  font-family: "NotoSansMono Nerd Font";
 }
 
 
@@ -74,20 +98,20 @@ tooltip label {
 #workspaces button {
   transition-property: background-color;
   transition-duration: 0.5s;
-  color: @foreground;
+  color: @active;
   background: transparent;
   border-radius: 4px;
 }
 #workspaces button.urgent {
   font-weight: bold;
-  color: @foreground;
+  color: @color15;
 }
 
 #workspaces button.active {
   padding: 4px 2px;
-  background: darker(@active);
-  color: @color5;
-  border-radius: 4px;
+  background: @active;
+  color: @color0;
+  border: 4px solid @color11;
 }
 
 
