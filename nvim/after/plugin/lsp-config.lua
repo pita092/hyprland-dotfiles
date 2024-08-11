@@ -3,6 +3,7 @@ local capabilities = require('cmp_nvim_lsp').default_capabilities()
 
 lspconfig.lua_ls.setup { capabilities = capabilities }
 lspconfig.clangd.setup { capabilities = capabilities }
+lspconfig.hyprls.setup { capabilities = capabilities }
 
 vim.api.nvim_create_autocmd('LspAttach', {
   group = vim.api.nvim_create_augroup('kickstart-lsp-attach', { clear = true }),

@@ -56,12 +56,18 @@ tooltip label {
 
 #submap,
 #custom-weather,
-#connection,
 #cnoti,
 #brightness,
 #privacy
 {
-  border: 4px solid @color1;
+  border: 4px solid @color15;
+  margin: 2px 2px 4px 2px;
+  background: darker(@active);
+	border-radius: 4px;
+}
+#connection
+{
+  border: 2px solid @color15;
   margin: 2px 2px 4px 2px;
   background: darker(@active);
 	border-radius: 4px;
@@ -69,7 +75,7 @@ tooltip label {
 
 #tray
 {
-  border: 4px solid @color2;
+  border: 2px solid @color15;
   margin: 2px 2px 4px 2px;
   background: darker(@active);
 	border-radius: 4px;
@@ -77,14 +83,14 @@ tooltip label {
 #custom-updates
 {
 	border: 2px solid @color15;
-  margin: 2px 2px 4px 2px;
+  margin: 4px 1px 12px 1px;
   background: darker(@active);
 	border-radius: 4px;
 }
 
 #together
 {
-  border: 4px solid @color4;
+  border: 2px solid @color15;
   margin: 2px 2px 4px 2px;
   background: darker(@active);
 	border-radius: 4px;
@@ -98,7 +104,7 @@ tooltip label {
 #workspaces button {
   transition-property: background-color;
   transition-duration: 0.5s;
-  color: @active;
+  color: darker(@active);
   background: transparent;
   border-radius: 4px;
 }
@@ -109,9 +115,9 @@ tooltip label {
 
 #workspaces button.active {
   padding: 4px 2px;
-  background: @active;
+  background: darker(@active);
   color: @color0;
-  border: 4px solid @color11;
+  border: 2px solid @color15;
 }
 
 
