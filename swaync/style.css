@@ -1,0 +1,24 @@
+.control-center {
+  background-color: #282828 ;
+  border-radius: 0px;
+}
+
+.notification-row {
+  padding: 10px;
+  margin: 5px;
+  background-color: #282828;
+  border-radius: 10px;
+}
+
+.notification-title {
+  color: #fbf1c7;
+}
+
+.notification-body {
+  color: #fbf1c7;
+}
+.notification {
+  background: none;
+  border: none;
+  padding: 0;
+}
