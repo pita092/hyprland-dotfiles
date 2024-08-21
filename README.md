@@ -25,4 +25,9 @@ ill maybe make an install script soon i am too lazy to do that
 
 
 
-![img2]()
+![img2](https://github.com/pita092/images-for-repos/blob/main/2024-08-21-202816_hyprshot.png?raw=true)
+
+
+
+
+![img3](https://github.com/pita092/images-for-repos/blob/main/2024-08-21-202824_hyprshot.png?raw=true)
