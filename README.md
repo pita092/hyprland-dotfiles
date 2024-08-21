@@ -16,6 +16,8 @@ ill maybe make an install script soon i am too lazy to do that
 >fastfetch
 >
 >qview
+>
+>some if this https://github.com/System64fumo person's amazing stuff
 ##   
 
 
