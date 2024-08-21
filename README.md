@@ -11,7 +11,7 @@ ill maybe make an install script soon i am too lazy to do that
 >
 >nvim
 >
->hyprland (ig)
+>hyprland (yes)
 >
 >fastfetch
 >
