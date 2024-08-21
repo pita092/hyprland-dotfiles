@@ -40,7 +40,7 @@ ill maybe make an install script soon i am too lazy to do that
 ![img4](https://github.com/pita092/images-for-repos/blob/main/2024-08-21-203058_hyprshot.png?raw=true)
 
 
-
+##   
 
 ## thanks
 
