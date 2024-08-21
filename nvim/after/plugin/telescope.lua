@@ -19,6 +19,7 @@ require('telescope').setup {
   cond = function()
     return vim.fn.executable 'make' == 1
   end,
+	 winblend = 30
 }
 pcall(require('telescope').load_extension, 'fzf')
 pcall(require('telescope').load_extension, 'ui-select')
@@ -38,7 +39,7 @@ vim.keymap.set('n', '<leader><leader>', builtin.buffers, { desc = '[ ] Find exis
 vim.keymap.set('n', '<leader>/', function()
   -- You can pass additional configuration to Telescope to change the theme, layout, etc.
   builtin.current_buffer_fuzzy_find(require('telescope.themes').get_dropdown {
-    winblend = 10,
+    winblend = 0,
     previewer = false,
   })
 end, { desc = '[/] Fuzzily search in current buffer' })

@@ -57,25 +57,3 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
   end,
 })
-
-require('mason-tool-installer').setup {
-
-  ensure_installed = {
-    'lua-language-server',
-    'stylua',
-    'clangd',
-    'clang-format',
-  },
-
-  auto_update = false,
-
-  run_on_start = true,
-
-  start_delay = 3000,
-  debounce_hours = 5,
-  integrations = {
-    ['mason-lspconfig'] = true,
-    ['mason-null-ls'] = true,
-    ['mason-nvim-dap'] = true,
-  },
-}
