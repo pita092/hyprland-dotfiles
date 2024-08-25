@@ -31,7 +31,7 @@ local kind_icons = {
   TypeParameter = '',
 }
 local borderstyle = {
-  border = { '╭', '─', '╮', '│', '╯', '─', '╰', '│' },
+  border = { '┌', '─', '┐', '│', '┘', '─', '└', '│' },
   winhighlight = 'Normal:CmpPmenu,CursorLine:CmpSel,Search:None',
 }
 
@@ -68,16 +68,17 @@ cmp.setup {
     end, { 'i', 's' }),
   },
   sources = cmp.config.sources {
-    { name = 'nvim_lsp' },
-    {
-      name = 'lazydev',
-      group_index = 0,
-    },
+    { name = 'nvim_lsp', keyword_length = 1 },
+    { name = 'luasnip', keyword_length = 1 },
+    { name = 'buffer', keyword_length = 3 },
+    { name = 'path' },
     { name = 'luasnip' },
-    { name = 'buffer' },
+    { name = 'nvim_lua' },
+    { name = 'treesitter' },
   },
   formatting = {
     fields = { 'abbr', 'kind', 'menu' },
+    expandable_indicator = true,
     format = function(entry, vim_item)
       local kind = require('lspkind').cmp_format { mode = 'text', maxwidth = 50 }(entry, vim_item)
       local strings = vim.split(kind.kind, ' ', { trimempty = true })

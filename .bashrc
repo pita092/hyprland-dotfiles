@@ -7,7 +7,7 @@
 
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
-PS1='[\W]\$ '
+#PS1='[\W]\$ '
 export PATH="/home/pita/eww/target/release:$PATH"
 export LIBVA_DRIVER_NAME=nvidia
 export XDG_SESSION_TYPE=wayland	
@@ -23,7 +23,7 @@ alias cls='clear'
 alias vim='launch_neovide'
 
 eval "$(zoxide init bash)"
-eval "$(starship init bash)"
+#eval "$(starship init bash)"
 #eval "$(oh-my-posh --config 'https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/gruvbox.omp.json' init bash)"
 
 
@@ -34,3 +34,4 @@ export BUN_INSTALL="$HOME/.bun"
 export PATH=$BUN_INSTALL/bin:$PATH
 
 cowsay -f stegosaurus Hello, pita | lolcat -p 1
+

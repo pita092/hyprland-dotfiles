@@ -4,9 +4,4 @@ return {
   'ellisonleao/gruvbox.nvim',
   'xiyaowong/transparent.nvim',
   'NvChad/nvim-colorizer.lua',
-  {
-    'sainnhe/gruvbox-material',
-    lazy = false,
-    priority = 1000,
-  },
 }

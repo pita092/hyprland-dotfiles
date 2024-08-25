@@ -20,10 +20,6 @@ return {
       enabled = function(root_dir)
         return vim.g.lazydev_enabled == nil and true or vim.g.lazydev_enabled
       end,
-
-      enabled = function(root_dir)
-        return not vim.uv.fs_stat(root_dir .. '/.luarc.json')
-      end,
     },
   },
 }

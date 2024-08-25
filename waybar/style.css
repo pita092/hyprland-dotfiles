@@ -1,6 +1,6 @@
 * {
     font-size: 15px;
-    border-radius: 5px;
+    border-radius: 0px;
 }
 
 window#waybar {
@@ -89,15 +89,16 @@ button:hover {
 #cava,
 #scratchpad,
 #mode,
-#window,
+#custom-launcher,
 #clock,
+#langauge,
 #battery,
 #backlight,
 #wireplumber,
 #tray,
 #mpris,
 #load {
-    padding: 0 10px;
+	    padding: 0 10px;
     background-color: #282828 ;
     color: #fbf1c7;
 	  margin-right: 10;
@@ -114,10 +115,13 @@ button:hover {
     color: #282828;
     /* box-shadow: inset 0 -3px #ffffff; */
 }
+#window{
+	color: #d79921;
+}
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
-    margin-left: 10px;
+    margin-left: 0;
 }
 
 /* If workspaces is the rightmost module, omit right margin */

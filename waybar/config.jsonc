@@ -4,22 +4,22 @@
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "height": 24, // Waybar height (to be removed for auto height)
-    // "width": 1280, // Waybar width
+    // "width": 1280, n// Waybar width
     "spacing": 4, // Gaps between modules (4px)
-		"width": 1940,
+		"width": 1920,
     // Choose the order of the modules
     "modules-left": [
         "hyprland/workspaces",
-        "cava",
     ],
     "modules-center": [
         "hyprland/window",
 				"custom/icon"
     ],
     "modules-right": [
+	"hyprland/language",
 	"wireplumber",
         "clock",
-				"load",				
+				"load",
         "tray"
     ],
 
@@ -36,36 +36,12 @@
         "max-length": 40,
         "all-outputs": true
     },
-    "cava": {
-	//        "cava_config": "$XDG_CONFIG_HOME/cava/cava.conf",
-	"framerate": 30,
-	"autosens": 1,
-	"bars": 14,
-	"lower_cutoff_freq": 50,
-	"higher_cutoff_freq": 10000,
-	"method": "pipewire",
-	"source": "auto",
-	"stereo": true,
-	"bar_delimiter": 0,
-	"noise_reduction": 0.77,
-	"input_delay": 2,
-        "hide_on_silence": true,
-	"format-icons": ["▁", "▂", "▃", "▄", "▅", "▆", "▇", "█" ],
-	"actions": {
-	    "on-click-right": "mode"
-	}
-    },
+	"hyprland/language": {
+    "format": "Lang: {} | ",
+    "keyboard-name": "at-translated-set-2-keyboard"
+},
     "mpris": {
- 	"format": " {status_icon} {dynamic}",
-        "interval": 1,
-        "dynamic-len": 40,
-	"status-icons": {
-		"playing": "▶",
-		"paused": "⏸",
-		"stopped": ""
-	},
-	"dynamic-order": ["title", "artist"],
-	"ignored-players": ["firefox"]
+ 	"format": "20 ",
     },
     "idle_inhibitor": {
         "format": "{icon}",
@@ -74,7 +50,6 @@
             "deactivated": ""
         }
     },
-
     "tray": {
         "icon-size": 14,
         "spacing": 10
@@ -85,29 +60,8 @@
     },
     "clock": {
         // "timezone": "America/New_York",
-			  "on-click": "swaync-client -t -sw",
-        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><big>{calendar}</big></tt>",
         "format-alt": "{:%Y-%m-%d}"
-    },
-    "cpu": {
-        "format": "{usage}% ",
-        "tooltip": false
-    },
-    "memory": {
-        "format": "{}% "
-    },
-    "temperature": {
-        // "thermal-zone": 2,
-        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
-        "critical-threshold": 80,
-        // "format-critical": "{temperatureC}°C {icon}",
-        "format": "{temperatureC}°C {icon}",
-        "format-icons": ["", "", ""]
-    },
-    "backlight": {
-        // "device": "acpi_video1",
-        "format": "{icon} {percent}%",
-        "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
     "battery": {
         "states": {
@@ -126,20 +80,11 @@
     },
     "wireplumber": {
         "scroll-step": 5, // %, can be a float
-        "format": "{icon} {volume}%",
-        "format-bluetooth": "{icon} {volume}% ",
-        "format-bluetooth-muted": " {icon}",
-        "format-muted": "",
+        "format": "{volume}%",
         "format-icons": {
-            "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
             "default": ["", "", ""]
         },
-        "on-click": "wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+        "on-click": "export GDK_BACKEND=x11 && export GTK_THEME=Gruvbox-Dark && pavucontrol"
     }
 },{
     "output": ["HDMI-A-1"],
@@ -182,6 +127,7 @@
         // "timezone": "America/New_York",
         "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
         "format-alt": "{:%Y-%m-%d}"
-    }
+    },
+
 }]
 
