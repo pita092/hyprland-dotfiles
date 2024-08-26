@@ -7,8 +7,7 @@ lsp_zero.set_sign_icons {
   hint = '⚑',
   info = '»',
 }
-lsp_zero.on_attach(function(client, bufnr)
-end)
+lsp_zero.on_attach(function(client, bufnr) end)
 mason_lspconfig.setup_handlers {
   function(server_name)
     lspconfig[server_name].setup(lsp_zero.nvim_lua_ls())
@@ -62,3 +61,41 @@ vim.api.nvim_create_autocmd('LspAttach', {
     end
   end,
 })
+
+--debugger
+local dap, dapui = require 'dap', require 'dapui'
+dap.listeners.before.attach.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.launch.dapui_config = function()
+  dapui.open()
+end
+dap.listeners.before.event_terminated.dapui_config = function()
+  dapui.close()
+end
+dap.listeners.before.event_exited.dapui_config = function()
+  dapui.close()
+end
+vim.keymap.set('n', '<C-b>', dap.toggle_breakpoint, {})
+vim.keymap.set('n', '<C-B>', dap.continue, {})
+
+dap.adapters.lldb = {
+  type = 'executable',
+  command = '/usr/bin/lldb-vscode', -- adjust as needed, must be absolute path
+  name = 'lldb',
+}
+local dap = require 'dap'
+dap.configurations.cpp = {
+  {
+    name = 'Launch',
+    type = 'lldb',
+    request = 'launch',
+    program = function()
+      return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+    end,
+    cwd = '${workspaceFolder}',
+    stopOnEntry = false,
+    args = {},
+
+     },
+}
