@@ -41,7 +41,7 @@ function M.MyTabLine()
     end
 
     s = s .. '%' .. i .. 'T'
-    s = s .. ' %{v:lua.require("pita.tabline").MyTabLabel(' .. i .. ')} '
+    s = s .. ' %{v:lua.require("scripts.tabline").MyTabLabel(' .. i .. ')} '
   end
   s = s .. '%#TabLineFill#%T'
   return s
@@ -59,7 +59,7 @@ function M.MyTabLabel(n)
 end
 
 function M.setup()
-  vim.o.tabline = [[%!v:lua.require'pita.tabline'.MyTabLine()]]
+  vim.o.tabline = [[%!v:lua.require'scripts.tabline'.MyTabLine()]]
 end
 
 return M

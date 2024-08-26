@@ -7,8 +7,6 @@ vim.cmd 'set softtabstop=2'
 vim.cmd 'set shiftwidth=2'
 require 'pita.remaps'
 require 'pita.lazy'
-require 'pita.dashboard'
-require('pita.tabline').setup()
 require 'pita.commands'
 vim.g.have_nerd_font = true
 vim.opt.relativenumber = true
