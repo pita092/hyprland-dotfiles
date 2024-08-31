@@ -74,9 +74,8 @@ button:hover {
 }
 
 #workspaces button.active {
-  background: #fbf1c7;
-  color: #282828;
-  border-color: transparent;
+  color: #fbf1c7;
+	border-bottom: 3px solid #cc241d;
   animation: gradient_f 20s ease-in infinite;
   transition: all 0.3s cubic-bezier(0.55, -0.68, 0.48, 1.682);
 }
@@ -90,25 +89,24 @@ button:hover {
 #scratchpad,
 #mode,
 #custom-launcher,
-#clock,
-#langauge,
 #battery,
 #backlight,
-#wireplumber,
 #tray,
-#mpris,
-#load {
-	    padding: 0 10px;
+#mpris{
+		padding: 0 10px;
     background-color: #282828 ;
     color: #fbf1c7;
-	  margin-right: 10;
+		margin-right: 10;
+
 
 }
 #custom-mark {
     padding: 0 10px;
     color: #ffffff;
 }
-
+#language{
+		  border-bottom: 3px solid #458588;
+}
 
 #mode {
     background-color: #689d6a;
@@ -117,6 +115,20 @@ button:hover {
 }
 #window{
 	color: #d79921;
+	border-bottom: 3px solid #d79921;
+
+}
+#wireplumber{
+		  border-bottom: 3px solid #b8bb26;
+
+}
+#clock{
+		border-bottom: 3px solid #b16286;
+}
+#load{
+		margin-right: 10;
+	  padding: 0 10px;
+		border-bottom: 3px solid #83c06c;
 }
 
 /* If workspaces is the leftmost module, omit left margin */
