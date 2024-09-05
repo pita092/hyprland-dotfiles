@@ -4,7 +4,8 @@ custom neovim header
 
 ***
 
-```N_("Welcome, To neovim"),
+```
+N_("Welcome, To neovim"),
 "",
 "",
 N_("   ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠦⢤⣀⣀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀"),
