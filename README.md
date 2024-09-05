@@ -2,7 +2,7 @@ custom neovim header
 
 /src/nvim/version.c
 
-***
+**
 
     N_("Welcome, To neovim"),
     "",
