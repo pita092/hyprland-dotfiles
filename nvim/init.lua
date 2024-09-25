@@ -1,4 +1,4 @@
--- ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠤⠶⠶⠛⠛⠛⠛⠛⠛⠛⠶⠦⢄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
+-- ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⣀⠤⠶⠶⠛⠛⠛⠛⠛⠛⠛⠶⠦⢄⣀⡀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀ds
 -- ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⣀⡤⠖⠛⠉⠁⠀⠀⠀⣠⣤⣶⣾⣶⣤⣄⠀⠀⠀⠈⠹⣷⣦⣤⣤⣤⣤⣄⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 -- ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⣴⠞⠉⠀⠀⠀⠀⠀⠀⠀⢸⣿⣿⡿⠟⠛⠛⠿⠆⠀⠀⠀⠀⠨⢻⠿⠿⠿⣿⣿⣷⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 -- ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⢀⡴⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠘⠿⠋⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠙⢿⣿⣿⡟⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
@@ -33,9 +33,9 @@
 -- ⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠉⠙⠛⠒⠦⠤⠤⠤⠶⠒⠒⠛⠛⠉⠉⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀⠀
 --
 --
+vim.g.base46_cache = vim.fn.stdpath("data") .. "/base46_cache/"
 
 vim.g.mapleader = " "
-
 -- bootstrap lazy and all plugins
 local lazypath = vim.fn.stdpath("data") .. "/lazy/lazy.nvim"
 
@@ -59,9 +59,16 @@ require("lazy").setup({
 	},
 }, lazy_stuff)
 
-require("pitavim.cmds")
+require("base46").load_all_highlights()
+require("configs")
 require("pitavim.scripts")
-require("pitavim.options")
-vim.schedule(function()
-	require("pitavim.maps")
-end)
+-- vim.schedule(function()
+-- 	require("pitavim.maps")
+-- end)
+-- vim.api.nvim_set_hl(0, “FloatBorder”, {link = "NoLspReferenceReadrmal"})
+
+vim.cmd([[
+highlight @comment guifg=#928374 gui=italic
+highlight LineNr guifg=#928374 gui=italic
+
+]])
