@@ -1,0 +1,6 @@
+[submodule "nvim/nvim-main"]
+	path = nvim/nvim-main
+	url = https://github.com/pita092/nvim-main
+[submodule "nvim/nvim"]
+	path = nvim/nvim
+	url = https://github.com/pita092/nvim-main
