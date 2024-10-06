@@ -1,0 +1,113 @@
+// -*- mode: jsonc -*-
+[
+  {
+    "output": ["DP-1", "eDP-2"],
+    // "layer": "top", // Waybar at top layer
+    "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 20, // Waybar height (to be removed for auto height)
+    // "width": 1280, n// Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    "width": 1920,
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces", "hyprland/window"],
+    "modules-center": [ "clock"],
+    "modules-right": [ "wireplumber", "tray"],
+
+    // Modules configuration
+    "hyprland/workspaces": {
+      "all-outputs": false,
+      "warp-on-scroll": false,
+      "enable-bar-scroll": true,
+      "disable-scroll-wraparound": true,
+      "format": "{icon}",
+    },
+    "hyprland/window": {
+      "format": "{title}",
+      "max-length": 40,
+      "all-outputs": true,
+    },
+    "mpris": {
+      "format": "20 ",
+    },
+    "idle_inhibitor": {
+      "format": "{icon}",
+      "format-icons": {
+        "activated": "",
+        "deactivated": "",
+      },
+    },
+    "tray": {
+      "icon-size": 14,
+      "spacing": 10,
+    },
+    "load": {
+      "format": "",
+      "on-click": "swaync-client -t -sw",
+    },
+    "clock": {
+      // "timezone": "America/New_York",
+      "tooltip-format": "<big>{:%Y %B}</big>  \n<tt><big>{calendar}</big></tt>",
+      "format-alt": "{:%Y-%m-%d}",
+    },
+    "battery": {
+      "states": {
+        // "good": 95,
+        "warning": 30,
+        "critical": 15,
+      },
+      "format": "{icon} {capacity}%",
+      "format-full": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-alt": "{icon} {time}",
+      // "format-good": "", // An empty format will hide the module
+      // "format-full": "",
+      "format-icons": ["", "", "", "", ""],
+    },
+    "wireplumber": {
+      "scroll-step": 5, // %, can be a float
+      "format": " {volume}% ",
+      "format-icons": {
+        "default": ["", "", ""],
+      },
+      "on-click": "export GDK_BACKEND=x11 && export GTK_THEME=Gruvbox-Dark && pavucontrol",
+    },
+  },
+  {
+    "output": ["HDMI-A-1"],
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "height": 24, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 4, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": ["hyprland/workspaces"],
+    "modules-center": ["clock"],
+    "modules-right": ["hyprland/window"],
+    "hyprland/workspaces": {
+      "all-outputs": true,
+      "warp-on-scroll": true,
+      "enable-bar-scroll": true,
+      "format": "{icon}",
+      "format-icons": {
+        "1": "",
+        "2": "",
+        "3": "",
+        "4": "",
+        "5": "",
+        "9": "",
+        "10": "",
+      },
+    },
+    "hyprland/window": {
+      "format": "{title}",
+      "max-length": 40,
+      "all-outputs": true,
+    },
+    "clock": {
+      // "timezone": "America/New_York",
+      "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+      "format-alt": "{:%Y-%m-%d}",
+    },
+  },
+]
